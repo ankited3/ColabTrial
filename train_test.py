@@ -1,3 +1,30 @@
+from model1_test import (
+    model as model1,
+    device as device1,
+    train_loader as train_loader1,
+    test_loader as test_loader1,
+    train as train1,
+    test as test1,
+    train_losses as train_losses1,
+    train_acc as train_acc1,
+    test_losses as test_losses1,
+    test_acc as test_acc1
+)
+from model2_test import (
+    model as model2,
+    device as device2,
+    train_loader as train_loader2,
+    test_loader as test_loader2,
+    train as train2,
+    test as test2,
+    train_losses as train_losses2,
+    train_acc as train_acc2,
+    test_losses as test_losses2,
+    test_acc as test_acc2
+)
+import torch.optim as optim
+
+
 optimizer1 = optim.SGD(model1.parameters(), lr=0.01, momentum=0.9)
 EPOCHS = 2
 for epoch in range(EPOCHS):
