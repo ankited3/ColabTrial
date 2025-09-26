@@ -15,7 +15,7 @@ import torch.optim as optim
 import torch.nn as nn
 
 optimizer1 = optim.SGD(model1.parameters(), lr=0.01, momentum=0.9)
-EPOCHS = 2
+EPOCHS = 15
 for epoch in range(EPOCHS):
     print("Model 1 EPOCH:", epoch)
     train1(model1, device1, train_loader1, optimizer1, epoch)
@@ -39,7 +39,7 @@ from model2_test import (
 )
 
 optimizer2 = optim.SGD(model2.parameters(), lr=0.01, momentum=0.9)
-EPOCHS = 2
+EPOCHS = 15
 for epoch in range(EPOCHS):
     print("Model 2 EPOCH:", epoch)
     train2(model2, device2, train_loader2, optimizer2, epoch)
@@ -64,7 +64,7 @@ optimizer3 = optim.Adam(model3.parameters(), lr=0.05)
 scheduler = optim.lr_scheduler.StepLR(optimizer3, step_size=4, gamma=0.1)
 criterion = nn.CrossEntropyLoss()
 
-for epoch in range(1, 3):
+for epoch in range(1, 16):
     print(f'Model 3 Epoch {epoch}')
     train3(model3, device3, train_loader3, optimizer3, epoch,criterion)
     test3(model3, device3, test_loader3,criterion)
